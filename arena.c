@@ -15,6 +15,7 @@ typedef struct {
 
 // Initializes the memory arena
 void arena_init(Arena *arena, size_t size) {
+
   // cast the void* return typq of malloc
   // to uint8_t for bitwise operation (for pointer arithmatic)
   arena->base = (uint8_t *)malloc(size);

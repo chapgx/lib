@@ -7,7 +7,7 @@ typedef void *(*alloc)(size_t size);
 typedef void (*free_alloc)(void *ptr);
 
 // Default arena size
-static int ARENA_INIT_SIZE = 1024 * 5;
+static size_t ARENA_INIT_SIZE = 1024UL * 5UL;
 
 typedef struct {
   size_t offset;

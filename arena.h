@@ -13,7 +13,7 @@ typedef struct {
 } Arena;
 
 // Initializes arena
-Arena arena_init(Arena *arena, size_t size);
+void arena_init(Arena *arena, size_t size);
 
 // Allocates memory in the arena returns a pointer to the memore allocated
 void *arena_alloc(Arena *arena, size_t size, size_t allignment);
