@@ -7,14 +7,14 @@
 #include <string.h>
 
 typedef struct {
+  uint32_t capacity;
   uint8_t len;
   char *str;
-  uint32_t capacity;
 } Str;
 
 Str str_new(const char *str, Allocator *a) {
   if (!a)
-    a = get_default_alloc(NULL);
+    a = alloc_default(NULL);
 
   // initialized empty string
   if (!str) {
@@ -32,7 +32,7 @@ Str str_new(const char *str, Allocator *a) {
     len++;
   }
 
-  Str string = {.len = len, .capacity = 24};
+  Str string = {.len = len, .capacity = sizeof(uint8_t) * 24};
 
   string.str = (char *)a->alloc(sizeof(uint8_t) * string.capacity);
   if (!string.str) {

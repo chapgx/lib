@@ -1,3 +1,3 @@
-run_test:
-	clang -std=c99 -Wall -Werror  ./test/${test}.c *.c ./test/tests.c -o _test && \
-		valgrind --leak-check=full ./_test && rm ./_test
+tests:
+	clang -std=c99 -Wall -Werror  ./test/${name}_test.c *.c ./test/tests.c -o ${name}_test && \
+		valgrind --leak-check=full ./${name}_test && rm ./${name}_test

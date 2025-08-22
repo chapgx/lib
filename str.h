@@ -8,9 +8,9 @@
 #include <stdint.h>
 
 typedef struct {
+  uint32_t capacity;
   uint8_t len;
   char *str;
-  uint32_t capacity;
 } Str;
 
 // Creates a new string if null is passed then it creates an empty string
@@ -21,7 +21,7 @@ void str_print(Str *string);
 /*void str_to_upper(Str *string);*/
 
 // Compares [string] to [str] returns true if equal
-bool str_equals(Str string, const char *str);
+bool str_equals(Str *string, const char *str);
 
 // Appends new [char *] to [string]
 void str_concat_from_const(Str *string, const char *str);

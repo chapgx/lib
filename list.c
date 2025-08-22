@@ -15,7 +15,7 @@ typedef struct {
 // Creates a new list
 List list_new(size_t tsize, Allocator *_alloc) {
   if (!_alloc) {
-    _alloc = get_default_alloc(NULL);
+    _alloc = alloc_default(NULL);
   }
 
   List l = {.cap = 20, .len = 0};

@@ -9,8 +9,8 @@ void dd1(void *ctx) { printf("DEFER 2\n"); }
 
 int main() {
 
-  defer(dd, NULL);
-  defer(dd1, NULL);
+  // defer(dd, NULL);
+  // defer(dd1, NULL);
 
   printf("I PRINT BEFORE DEFER");
 

@@ -1,13 +1,16 @@
 #include "./str.h"
+#include "allocator.h"
 #include <stdint.h>
 
 typedef struct {
-  uint8_t code;
   Str message;
+  uint8_t code;
 } Error;
 
 // Creates a new error with a message
-Error err_new(Str message) {
-  Error e = {.code = 0, .message = message};
+Error error_new(char *error_message, uint8_t code, Allocator *alloc) {
+  alloc = alloc_default(alloc);
+  Str str = str_new(error_message, alloc);
+  Error e = {.message = str, .code = code};
   return e;
 }

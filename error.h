@@ -7,8 +7,10 @@
 
 // Error
 typedef struct {
-  uint8_t code;
   Str message;
+  uint8_t code;
 } Error;
+
+Error error_new(char *error_message, uint8_t code, Allocator *alloc);
 
 #endif

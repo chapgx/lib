@@ -15,18 +15,19 @@ typedef struct {
 } Allocator;
 
 // Sets the size of the default arena if you need to change it defaults to 5Kb
-void set_arena_size(size_t size);
+void arena_set_size(size_t size);
 
 // TODO: decide if we are going to remove the function from the global scope
 //  Returns global arena offset
-size_t get_arena_offset();
+size_t arena_get_offset();
 
 // Gets a pointer to the default allocator a [fallback] allocator can be
 // passed if needed
-Allocator *get_default_alloc(void *fallback);
+Allocator *alloc_default(void *fallback);
 
 // Sets the default allocator
-void set_default_alloc(Allocator *a);
+void alloc_default_set(Allocator *a);
 
-Allocator *temp_alloc(void);
+// Retunrns default temp allocator
+Allocator *alloc_temp(void);
 #endif
